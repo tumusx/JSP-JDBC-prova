@@ -9,24 +9,24 @@
 </head>
 <body>
 
-	<h1>Excluir Livro</h1>
+	<h1>EXCLUIR PRODUTO</h1>
 	
 	<%
 	if (request.getParameter("id") != null) {
 
 		String id = request.getParameter("id");
 
-		pstmt = conn.prepareStatement("DELETE FROM livro WHERE id = ?");
+		pstmt = conn.prepareStatement("DELETE FROM produto WHERE id = ?");
 		pstmt.setString(1, id);
 
 		int rowsAffected = pstmt.executeUpdate();
-		out.print((rowsAffected > 0) ? "<p>Registro Deletado com Suesso.</p>" : "<p>Erro ao Excluir o Registro.</p>");
+		out.print((rowsAffected > 0) ? "<p>PRODUTO Deletado com Suesso.</p>" : "<p>Erro ao Excluir o PRODUTO.</p>");
 
 	} else {
-		response.sendRedirect("listar-livros.jsp");
+		response.sendRedirect("listarProduto.jsp");
 	}
 	%>
-	<a href='listar-livros.jsp'>Voltar</a>
+	<a href='listarProduto.jsp'>Voltar</a>
 
 </body>
 </html>

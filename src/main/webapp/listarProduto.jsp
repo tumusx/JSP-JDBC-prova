@@ -34,7 +34,7 @@
 							<td><%=rs.getString("CATEGORIA")%></td>
 							<td><%=rs.getFloat("PRECO")%></td>
 							
-							<td><a href="editar-livro.jsp?id=<%=rs.getInt("id")%>"><button type="button" class="btn btn-info"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button></a></td>
+							<td><a href="editarProduto.jsp?id=<%=rs.getInt("id")%>"><button type="button" class="btn btn-info"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button></a></td>
 							<td><a href="javascript:jsExcluir(<%=rs.getInt("id")%>)"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></a></td>
 						</tr>
 						<%
@@ -43,7 +43,7 @@
 
 					</table>
 
-					<br> <a href="inserir-livro.jsp"><button type="button" class="btn btn-success">Inserir Produto</button></a>
+					<br> <a href="inserirProduto.jsp"><button type="button" class="btn btn-success">Inserir Produto</button></a>
 				</div>
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 	function jsExcluir(id) {
 
 		if (confirm("Tem certeza que deseja excluir?")) {
-			location.href = "excluir-livro.jsp?id=" + id;
+			location.href = "excluirProduto.jsp?id=" + id;
 		}
 
 	}

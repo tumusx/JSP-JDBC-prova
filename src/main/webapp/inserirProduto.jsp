@@ -44,7 +44,7 @@
 	}
 	%>
 	
-	<a href='listar-livros.jsp'>Voltar</a>
+	<a href='listarProduto.jsp'>Voltar</a>
 	
 </body>
 </html>

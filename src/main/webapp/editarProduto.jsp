@@ -19,7 +19,7 @@ if (idUpdate != null) {
 		rs = pstmt.executeQuery();
 
 		if (!rs.next()) {
-			response.sendRedirect("listar-livros.jsp");
+			response.sendRedirect("listarProduto.jsp");
 				} else {
 			id = rs.getInt("id");
 			descricao = rs.getString("descricao");
@@ -34,7 +34,7 @@ if (idUpdate != null) {
 		preco = Integer.parseInt(request.getParameter("preco"));
 	}
 } else {
-	response.sendRedirect("listar-livros.jsp");
+	response.sendRedirect("listarProduto.jsp");
 }
 %>
 
@@ -46,7 +46,7 @@ if (idUpdate != null) {
 </head>
 <body>
 
-	<h1>Editar Livro</h1>
+	<h1>Editar Produto</h1>
 
 	<form action="" method="post">
 		<label>DESCRICAO</label><br> <input name="descricao" type="text" value="<%=descricao%>"><br> <br>
@@ -61,7 +61,7 @@ if (idUpdate != null) {
 
 		if (descricao != null && categoria != null && !descricao.trim().equals("") && !categoria.trim().equals("")) {
 
-			pstmt = conn.prepareStatement("UPDATE produto SET DESCRICAO = ?, CATEGORIA = ?, PRECO = ? WHERE id = ?, ");
+			pstmt = conn.prepareStatement("UPDATE produto SET DESCRICAO = ?, CATEGORIA = ?, PRECO = ? WHERE id = ?");
 			pstmt.setString(1, descricao);
 			pstmt.setString(2, categoria);
 			pstmt.setInt(3, preco);
@@ -77,7 +77,7 @@ if (idUpdate != null) {
 	}
 	%>
 
-	<a href='listar-livros.jsp'>Voltar</a>
+	<a href='listarProduto.jsp'>Voltar</a>
 
 </body>
 </html>
